@@ -4,3 +4,74 @@
         url('Roboto-Regular.woff') format('woff');
     font-display: swap;
 }
+
+@font-face {
+    font-family: 'icomoon';
+    src:  url('../fonts/icomoon.eot?111jwk');
+    src:  url('../fonts/icomoon.eot?111jwk#iefix') format('embedded-opentype'),
+      url('../fonts/icomoon.ttf?111jwk') format('truetype'),
+      url('../fonts/icomoon.woff?111jwk') format('woff'),
+      url('../fonts/icomoon.svg?111jwk#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+  }
+  
+  [class^="icon-"], [class*=" icon-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'icomoon' !important;
+    speak: never;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+  
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  .icon-envelope-o:before {
+    content: "\f003";
+  }
+  .icon-th-large:before {
+    content: "\f009";
+  }
+  .icon-th-list:before {
+    content: "\f00b";
+  }
+  .icon-map-marker:before {
+    content: "\f041";
+  }
+  .icon-shopping-cart:before {
+    content: "\f07a";
+  }
+  .icon-phone:before {
+    content: "\f095";
+  }
+  .icon-bell-o:before {
+    content: "\f0a2";
+  }
+  .icon-sort:before {
+    content: "\f0dc";
+  }
+  .icon-unsorted:before {
+    content: "\f0dc";
+  }
+  .icon-bolt:before {
+    content: "\f0e7";
+  }
+  .icon-flash:before {
+    content: "\f0e7";
+  }
+  .icon-angle-right:before {
+    content: "\f105";
+  }
+  .icon-location-arrow:before {
+    content: "\f124";
+  }
+  .icon-sort-amount-desc:before {
+    content: "\f161";
+  }
+  
