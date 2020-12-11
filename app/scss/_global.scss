@@ -6,6 +6,21 @@ html{
 *::after{
     box-sizing: inherit;
 }
+html,
+body {
+	height: 100%;
+}
+.wrapper {
+	display: flex;
+	flex-direction: column;
+	min-height: 100%;
+}
+.content {
+	flex: 1 0 auto;
+}
+.footer {
+	flex: 0 0 auto;
+}
 a{
     display: inline-block;
     text-decoration: none;
@@ -39,6 +54,9 @@ body{
         padding: 0 15px;
     }
 }
+.page-content{
+    background-color: $grey;
+}
 .title{
     font-size: 36px;
     line-height: 60px;
@@ -50,4 +68,32 @@ body{
 .rate-star{
     display: inline-block;
     margin-right: 8px;
+}
+.breadcrumbs{
+    padding: 45px 0 40px;
+    &__list{
+        li{
+            display: inline-block;
+            & + li{
+                position: relative;
+                padding-left: 22px;
+                &::before{
+                    content: "-";
+                    position: absolute;
+                    left: 8px;
+                    color: $green;
+                }
+            }
+            &:last-child{
+                a,
+                span{
+                    color: $bg;
+                }
+            }
+        }
+        a{
+            color: #b0bec5;
+        }
+        
+    }
 }
