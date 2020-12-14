@@ -744,6 +744,7 @@
         cursor: pointer;
         font-size: 16px;
         color: #90a4ae;
+        outline: none;
         &.active{
             color: $green;
         }
@@ -771,6 +772,7 @@ button.icon-unsorted{
     .product__item{
         max-width: 270px;
         background-color: #fff;
+        transition: all .5s;
         &:hover{
             box-shadow: 0px 16px 20px 0px rgba(216, 216, 216, 0.75);
         }
@@ -817,7 +819,89 @@ button.icon-unsorted{
         }
     }
 }
-  
 // end producr-page
+// start product-page list
+
+.product__item-text{
+    display: none;
+}
+.product__item-price{
+    span{
+        display: none;
+    }
+}
+.product__item-reviews{
+    display: none;
+}
+.product-page__content{
+    .product__item.list{
+        max-width: 100%;
+        .product__item-img{
+            width: 240px;
+            float: left;
+            min-height: 100%;
+        }
+        .product__item-content{
+            padding: 20px 30px 12px;
+        }
+        .product__item-name{
+            max-width: 480px;
+        }
+        .product__item-text{
+            display: block;
+            font-size: 14px;
+            color: #70838d;
+            margin-top: 10px;
+            font-family: 'Roboto-Regular', sans-serif;
+            font-weight: 400;
+        }
+        .product__item-price{
+            font-size: 30px;
+            span{
+                display: block;
+                font-size: 13px;
+                color: #aeb4bb;
+                font-family: 'Roboto-Regular', sans-serif;
+                font-weight: 400;
+                margin-top: 22px;
+            }
+        }
+        .product__item-info{
+            padding: 10px 30px;
+        }
+        .product__item-star{
+            margin-left: auto;
+            margin-right: 30px;
+        }
+        .rate-star{
+            margin-right: 8px;
+        }
+        .product__item-reviews{
+            display: block;
+            .icon-comment-o,
+            .icon-heart-o{
+                font-size: 12px;
+                line-height: 1.1;
+                color: $bg;
+                display: inline-block;
+                position: relative;
+                padding-left: 48px;
+                border-left: 1px solid #aeb4bb;
+                line-height: 13px;
+                &::before{
+                    font-size: 16px;
+                    color: $green;
+                    position: absolute;
+                    left: 18px;
+                }
+            }
+            .icon-comment-o{
+                padding-right: 27px;
+            }
+        }
+    }
+}
+
+// end product-page list
 
   
