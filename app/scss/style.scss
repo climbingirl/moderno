@@ -15,9 +15,252 @@
 }
 .header__text{
     margin-left: auto;
-    margin-right: 50px;
+    margin-right: 30px;
     span{
         color: $red;
+    }
+}
+.header__box{
+    display: flex;
+    align-items: center;
+}
+.heder__circle{
+    &.active{
+        display: block;
+    }
+    width: 34px;
+    height: 34px;
+    background-color: #f5f5f5;
+    border-radius: 50%;
+    margin-right: 16px;
+    position: relative;
+    &::before{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 14px;
+        color: #a0a0a0;
+        transition: all .3s;
+    }
+    span{
+        position: absolute;
+        width: 18px;
+        height: 18px;
+        border-radius: 50%;
+        color: #fff;
+        font-size: 11px;
+        text-align: center;
+        line-height: 18px;
+        top: -8px;
+        right: -5px;
+    }
+}
+.notification{
+    span{
+        background-color: $yellow;
+    }
+}
+.message{
+    span{
+        background-color: $tomato;
+    }
+}
+.basket{
+    span{
+        background-color: $green;
+    }
+}
+.notification__box,
+.message__box,
+.basket__box,
+.user__box{
+    position: relative;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    &:hover{
+        .heder__circle::before{
+            color: $bg;
+        }
+        .circle__menu{
+            height: auto;
+            overflow: visible;
+            border-width: 1px;
+            padding-bottom: 5px;
+            transition: all .3s;
+        }
+        .circle__item{
+            padding: 20px;
+            transition: all .3s;
+        }
+    }
+}
+.circle__menu{
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: #fff;
+    width: 268px;
+    border: 0px solid #d5d5d5;
+    padding-bottom: 0;
+    height: 0;
+    overflow: hidden;
+}
+.circle__item{
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    position: relative;
+    & + &{
+        border-top: 1px solid #d5d5d5;
+    }
+    &::before{
+        position: absolute;
+        top: 25px;
+        right: 25px;
+        font-size: 16px;
+        color: #b0bec5;
+    }
+}
+.circle__img{
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-right: 20px;
+}
+.circle__info{
+    line-height: 18px;
+    &-name{
+        font-size: 12px;
+        @include f700;
+        color: $bg;
+    }
+    &-theme{
+        font-size: 12px;
+        color: $green;
+    }
+    &-date{
+        font-size: 10px;
+        color: #707070;
+    }
+    &-title,
+    &-price{
+        font-size: 16px;
+        color: $bg;
+        @include f500;
+    }
+}
+.message__menu{
+    .circle__info-theme{
+        font-size: 11px;
+    }
+}
+.basket__menu{
+    .circle__img{
+        width: 73px;
+        height: 57px;
+        border-radius: 0;
+    }
+    .circle__info{
+        line-height: 20px;
+    }
+    .basket__order{
+        padding: 12px 15px;
+        border-top: 1px solid #d5d5d5;
+    }
+    .basket__sum{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 16px;
+        color: $bg;
+        @include f700;
+        padding: 0 20px 5px 10px;
+    }
+    .basket__btn{
+        width: 105px;
+        padding: 6px;
+        color: #fff;
+        font-size: 14px;
+        @include f700;
+        background-color: $green;
+        text-align: center;
+        &-checkout{
+            width: 123px;
+            background-color: $red;
+            margin-left: 3px;
+        }
+    }
+}
+.icons-color::before{
+    color: $tomato;
+}
+.user{
+    padding-right: 22px;
+    margin-right: 20px;
+    position: relative;
+    &__inner{
+        display: flex;
+        align-items: center;
+        &::before{
+            content: "\f107";
+            font-family: 'icomoon';
+            position: absolute;
+            right: 0;
+            top: -3px;
+            font-size: 16px;
+            color: #707070;
+        }
+    }
+    &__img{
+        height: 34px;
+        width: 34px;
+        margin-right: 15px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    &__info{
+        font-size: 14px;
+        line-height: 20px;
+    }
+    &__name{
+        @include f500;
+        color: #222222;
+    }
+    &__money{
+        @include f700;
+        color: $green;
+    }
+}
+.user__menu{
+    position: absolute;
+    right: 10px;
+    top: 100%;
+    background-color: #fff;
+    width: 158px;
+    border: 0px solid #d5d5d5;
+    padding: 0 18px;
+    height: 0;
+    overflow: hidden;
+    li{
+        margin-bottom: 10px;
+    }
+    a{
+        font-size: 12px;
+    }
+}
+.user__box:hover{
+    .user__menu{
+        height: auto;
+        overflow: visible;
+        padding: 18px;
+        border-width: 1px;
+        transition: all .3s;
     }
 }
 .header__btn{
@@ -27,12 +270,23 @@
     padding: 4px;
     width: 72px;
     border-radius: 4px;
+    margin-left: 10px;
     &-login{
         background-color: $green;
-        margin-right: 5px;
     }
     &-register{
         background-color: $red;
+        margin-left: 7px;
+    }
+    &-logout{
+        background-color: $red;
+        display: none;
+    }
+    &.header__btn-login--on{
+        display: block;
+    }
+    &.header__btn-login--off{
+        display: none;
     }
 }
 .header__menu{
@@ -158,6 +412,7 @@
     width: 100%;
     box-shadow: 0px 1px 2px 0px rgba(205, 214, 222, 0.75);
     margin-bottom: 30px;
+    transition: all .3s;
     &-img{
         min-height: 250px;
         display: block;
@@ -479,14 +734,8 @@
             color: #b7c3c8;
             padding-left: 20px;
             margin-bottom: 15px;
-            position: relative;
             &::before{
-                content: "\f105";
-                font-family: 'icomoon';
                 font-size: 18px;
-                color: $green;
-                position: absolute;
-                left: 0;
             }
         }
     }
@@ -592,20 +841,10 @@
 }
 .categories__list{
     li{
-        position: relative;
         display: flex;
         justify-content: space-between;
         padding-left: 18px;
         margin-bottom: 15px;
-        &::before{
-            content: "\f105";
-            position: absolute;
-            left: 0;
-            top: 0;
-            font-family: 'icomoon';
-            font-size: 14px;
-            color: $green;
-        }
         a{
             color: $bg;
         }
@@ -904,4 +1143,4 @@ button.icon-unsorted{
 
 // end product-page list
 
-  
+// @import "media";
