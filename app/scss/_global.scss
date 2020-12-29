@@ -66,6 +66,13 @@ body{
     @include f700;
     margin-bottom: 45px;
 }
+.title-head{
+    font-size: 24px;
+    @include f500;
+    color: $bg;
+    border-bottom: 1px solid #dedede;
+    padding: 20px 30px;
+}
 .rate-star{
     display: inline-block;
     margin-right: 8px;
