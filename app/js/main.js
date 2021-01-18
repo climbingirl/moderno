@@ -50,7 +50,7 @@ $(function(){
         return false;
     });
 
-    $('select').styler();
+    $('input[type="file"], select').styler();
       
     var mixer = mixitup('.products__inner');
 });
